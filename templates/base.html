@@ -149,15 +149,16 @@
         </div>
 
 </div><!-- wrapper -->
-<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.min.js"></script>
-<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.simplemodal.1.4.1.min.js"></script>
-<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-ui-1.8.16.custom.min.js"></script>
-<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.cookie.js"></script>
-<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.placeholder.min.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/jq.min.js"></script>
 <script type="text/javascript" src="{{ MEDIA_URL }}js/utils.js?t=1359353100"></script>
 <script type="text/javascript">
-$('input, textarea').placeholder();
+$('#title-panel, #left-panel, #right-panel').each(function() { // for ie 7
+    if ($(this).children().length == 0) {
+        $(this).addClass('hide');
+    }
+});
 $('.top-bar-con .manage').css('width', $('.top-bar-con').width() - $('.top-bar-con .account').width() - 30);
+$('input, textarea').placeholder();
 $('#lang-context').click(function() {
         if ($(this).attr('data') == 'no-popup') {
             $(this).parent().css('position', 'relative');
@@ -169,7 +170,6 @@ $('#lang-context').click(function() {
         }
         return false;
     }).focus(function() { $(this).blur(); });
-
 $(document).click(function(e) {
     var element = e.target || e.srcElement;
     if (element.id != 'lang-context-selector' && element.id != 'lang-context') {
@@ -179,7 +179,6 @@ $(document).click(function(e) {
 });
 
 {% if request.user.is_authenticated %}
-
 {% if request.cur_note %}
 $('#info-bar .close').click(function() {
     $('#info-bar').addClass('hide');
@@ -225,13 +224,6 @@ $(document).click(function(e) {
     }
 });
 {% endif %}
-
-// for ie 7
-$('#title-panel, #left-panel, #right-panel').each(function() {
-    if($(this).children().length == 0) {
-        $(this).addClass('hide');
-    }
-});
 {% endif %}
 </script>
 {% block extra_script %}{% endblock %}
