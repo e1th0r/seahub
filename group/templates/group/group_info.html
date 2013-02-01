@@ -57,7 +57,7 @@
 {% if is_join %}
 <div class="info-item">
     <h3 class="info-item-top">{% trans "Operations" %}</h3>
-    <ul class="with-bg info-item-bottom">
+    <ul class="info-item-bottom op-list">
         {% if is_staff %}
         <li><a id="group-mgr" href="{% url 'group.views.group_manage' group.id %}">{% trans "Administration" %}</a></li>
         {% else %}
@@ -75,7 +75,7 @@
             <li><a href="#grp-repos">{% trans "Libraries" %}</a></li>
             <li class="long-item"><a href="#grp-repos-commits">{% trans "Recent Changes" %}</a></li>
         </ul>
-        <button id="repo-create" class="fright">{% trans "New Library" %}</button>
+        <button id="repo-create" class="add fright">{% trans "New Library" %}</button>
     </div>
     <div id="grp-repos" class="hide">
 {% if repos %}
