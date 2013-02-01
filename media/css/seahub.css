@@ -11,7 +11,7 @@ form,input,textarea,button,img {
 }
 body,
 input, textarea, button, select {
-    font: 13px/1.5 Arial, Helvetica, sans-serif;
+    font: 13px/19px Arial, Helvetica, sans-serif;/* 19px : for ff*/
     color: #333;
     word-wrap:break-word; /* for en */
 }
@@ -957,7 +957,7 @@ textarea:-moz-placeholder {/* for FF */
 }
 #download-dir {
     padding-left:19px;
-    background-position:3px -138px;
+    background-position:2px -139px;
 }
 #featured-filetype {
     margin:5px 0;
@@ -1404,7 +1404,6 @@ textarea:-moz-placeholder {/* for FF */
     margin: 0;
     opacity: 0;
     filter: alpha(opacity=0);
-/*transform: translate(-300px, 0) scale(4);*/
 }
 #user-avatar-input,
 #grp-avatar-input {
