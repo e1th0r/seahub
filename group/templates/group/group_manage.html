@@ -12,7 +12,7 @@
 <div class="info-item">
     <h3 class="info-item-top">{% trans "Group Avatar" %}</h3>
     <div class="info-item-bottom ovhd">
-        <img src="{% grp_avatar_url group.props.id 48 %}" alt="{{ group.props.group_name }}{% trans "'s icon" %}" title="{{ group.props.group_name }}" class="avatar fleft" />
+        <div class="fleft">{% grp_avatar group.props.id 48 %}</div>
         <form id="grp-avatar-form" enctype="multipart/form-data" method="post" action="{% url 'avatar_group_add' group.id %}" class="fleft">
             <button type="button" id="grp-avatar-chg-btn">{% trans "Change" %}</button>
             <input type="file" name="avatar" id="grp-avatar-input" />

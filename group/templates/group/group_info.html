@@ -13,14 +13,12 @@
 <div class="info-item">
     <h3 class="info-item-top">{% trans "Basic Info" %}</h3>
     <div class="info-item-bottom group-basic-info ovhd">
-        <img src="{% grp_avatar_url group.props.id 48 %}" alt="{{ group.props.group_name }}{% trans "'s icon" %}" title="{{ group.props.group_name }}" class="avatar fleft" />
+        <div class="fleft">{% grp_avatar group.props.id 48 %}</div>
         <p class="txt fright">{{ group.creator_name|email2nickname }} {% trans "created at" %}<br />{{ group.timestamp|tsstr_day }}</p>
     </div>
 </div>
 <div class="info-item">
-    <div class="info-item-top">
-        <h3>{% trans "Staffs" %}</h3>
-    </div>
+    <h3 class="info-item-top">{% trans "Staffs" %}</h3>
     <ul class="info-item-bottom">
         {% for member in managers %}
         <li class="member">{% avatar member.user_name 16 %}<a class="name" href="{{ SITE_ROOT }}profile/{{ member.user_name }}/">{{ member.user_name|email2nickname }}</a></li>
